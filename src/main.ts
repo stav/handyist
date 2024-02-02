@@ -1,24 +1,12 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
+import typescriptLogo from './typescript.svg'
 import { setupCounter } from './counter.ts'
+import template from './main.html?raw'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const params = ["viteLogo", "typescriptLogo", `return \`${template}\``]
+const templateFunction = new Function(...params)
+const app = document.querySelector<HTMLDivElement>('#app')!
+app.innerHTML = templateFunction(viteLogo, typescriptLogo)
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
