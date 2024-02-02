@@ -1,8 +1,8 @@
-import './style.css'
+import '@/style.css'
 import viteLogo from '/vite.svg'
-import typescriptLogo from './typescript.svg'
-import { setupCounter } from './counter.ts'
-import template from './main.html?raw'
+import typescriptLogo from '@/typescript.svg'
+import { setupCounter } from '@/counter.ts'
+import template from '@/main.html?raw'
 
 const params = ["viteLogo", "typescriptLogo", `return \`${template}\``]
 const templateFunction = new Function(...params)
