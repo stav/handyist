@@ -3,7 +3,7 @@ import viteLogo from '/vite.svg'
 import typescriptLogo from '@/typescript.svg'
 // Done importing assets
 
-import { setupCounter } from '@/counter.ts'
+import { setupDarkMode } from './darkmode'
 // Done importing modules
 
 import template from '@/main.html?raw'
@@ -20,5 +20,5 @@ const app = document.querySelector<HTMLDivElement>('#app')!
 app.innerHTML = templateFunction(viteLogo, typescriptLogo)
 // Done rendering template (hydrate)
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
-// Counter listening
+setupDarkMode(document.querySelector<HTMLButtonElement>('#dark-toggle')!)
+// DarkMode listening
