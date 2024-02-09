@@ -4,15 +4,24 @@
   "private": true,
   "version": "0.0.0",
   "packageManager": "bun@1.0.25",
+  "author": {
+    "name": "Steven Almeroth",
+    "email": "steven.almeroth@gmail.com"
+  },
   "scripts": {
     "clean": "rm -rf _site",
-    "serve": "bun run clean && bunx @11ty/eleventy --serve --incremental --watch",
-    "build": "bun run clean && ELEVENTY_ENV=production bunx @11ty/eleventy"
+    "tailw": "bunx tailwindcss -i src/tailwind.css --content=./src/_includes/* -o _site/css/tailwind.css",
+    "watch": "bunx @11ty/eleventy --serve --incremental --watch",
+    "serve": "bun run clean && bun run tailw && bun run watch",
+    "build": "bun run clean && bun run tailw && ELEVENTY_ENV=production bunx @11ty/eleventy"
   },
   "peerDependencies": {
     "typescript": "^5.2.2"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
   }
 }
