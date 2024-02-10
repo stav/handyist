@@ -4,9 +4,10 @@ module.exports = function (config) {
   })
 
   config.addPassthroughCopy({
-    'vendor/fa/_lib/webfonts': 'webfonts',
-    'vendor/fa/_lib/css': 'css',
     'public/img': 'img',
+    'vendor/google': '/', // https://search.google.com/search-console
+    'vendor/fa/_lib/css': 'css',
+    'vendor/fa/_lib/webfonts': 'webfonts',
   })
 
   return {
