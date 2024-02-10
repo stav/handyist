@@ -2,4 +2,12 @@
 layout: default
 title: "The Handyist"
 ---
-<h1 class="text-3xl">{{ title }}</h1>
+{% include "1navi.html" %}
+<main>
+  {% include "2ntro.html" %}
+  {% include "3work.html" %}
+  {% include "4grow.html" %}
+  {% include "5some.html" %}
+  {% include "6send.html" %}
+</main>
+{% include "9foot.html" %}

@@ -6,6 +6,7 @@ module.exports = function (config) {
   config.addPassthroughCopy({
     'vendor/fa/_lib/webfonts': 'webfonts',
     'vendor/fa/_lib/css': 'css',
+    'public/img': 'img',
   })
 
   return {
