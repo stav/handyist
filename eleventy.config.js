@@ -1,6 +1,6 @@
 module.exports = function (config) {
   config.setServerOptions({
-    watch: ['_site/**/*.css']
+    watch: ['dist/**/*.css']
   })
 
   config.addPassthroughCopy({
@@ -11,7 +11,8 @@ module.exports = function (config) {
 
   return {
     dir: {
-      input: 'src'
+      input: 'src',
+      output: 'dist',
     }
   }
 }

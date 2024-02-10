@@ -9,8 +9,8 @@
     "email": "steven.almeroth@gmail.com"
   },
   "scripts": {
-    "clean": "rm -rf _site",
-    "tailw": "bunx tailwindcss -i src/tailwind.css --content=./src/_includes/* -o _site/css/tailwind.css",
+    "clean": "rm -rf dist",
+    "tailw": "bunx tailwindcss -i src/tailwind.css --content=./src/_includes/* -o dist/css/tailwind.css",
     "watch": "bunx @11ty/eleventy --serve --incremental --watch",
     "serve": "bun run clean && bun run tailw && bun run watch",
     "build": "bun run clean && bun run tailw && bunx @11ty/eleventy",
