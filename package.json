@@ -13,7 +13,8 @@
     "tailw": "bunx tailwindcss -i src/tailwind.css --content=./src/_includes/* -o _site/css/tailwind.css",
     "watch": "bunx @11ty/eleventy --serve --incremental --watch",
     "serve": "bun run clean && bun run tailw && bun run watch",
-    "build": "bun run clean && bun run tailw && ELEVENTY_ENV=production bunx @11ty/eleventy"
+    "build": "bun run clean && bun run tailw && bunx @11ty/eleventy",
+    "build:prod": "bun run clean && bun run tailw && ELEVENTY_ENV=production bunx @11ty/eleventy"
   },
   "peerDependencies": {
     "typescript": "^5.2.2"
