@@ -9,12 +9,15 @@
     "email": "steven.almeroth@gmail.com"
   },
   "scripts": {
+    "dev": "concurrently \"bun run serve\" \"bun run tailw:dev\"",
     "clean": "rm -rf dist",
-    "tailw": "bunx tailwindcss -i src/tailwind.css --content=./src/_includes/* -o dist/css/tailwind.css",
+    "tailw:dev": "bunx tailwindcss -i src/tailwind.css --content=./src/_includes/* -o dist/css/tailwind.css --watch --postcss",
+    "tailw:bld": "bunx tailwindcss -i src/tailwind.css --content=./src/_includes/* -o dist/css/tailwind.css",
+    "style": "bun run clean && bun run tailw:bld",
     "watch": "bunx @11ty/eleventy --serve --incremental --watch",
-    "serve": "bun run clean && bun run tailw && bun run watch",
-    "build": "bun run clean && bun run tailw && bunx @11ty/eleventy",
-    "build:prod": "bun run clean && bun run tailw && ELEVENTY_ENV=production bunx @11ty/eleventy"
+    "serve": "bun run style && bun run watch",
+    "build": "bun run style && bunx @11ty/eleventy",
+    "build:prod": "bun run style && ELEVENTY_ENV=production bunx @11ty/eleventy"
   },
   "peerDependencies": {
     "typescript": "^5.2.2"
@@ -22,6 +25,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "autoprefixer": "^10.4.17",
+    "concurrently": "^8.2.2",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1"
   }
