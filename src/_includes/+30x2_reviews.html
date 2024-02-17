@@ -1,7 +1,7 @@
 <div class="flex flex-wrap">
 
   {% for review in data.reviews %}
-  <div class="w-full md:w-4/12 px-4 text-center">
+  <div class="w-full md:w-4/12 h-64 px-4 text-center">
     <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
       <div class="px-4 py-5 flex-auto">
         <div
@@ -12,7 +12,7 @@
         {% for _ in (1..review.rating) %}
         <i class="fas fa-star text-yellow-500"></i>
         {% endfor %}
-        <p class="mt-2 mb-4 text-gray-600">
+        <p class="mt-2 mb-4 text-gray-600 h-12 line-clamp-2" title="{{ review.text }}">
           <i class="fas fa-quote-left"></i>
           {{ review.text }}
           <i class="fas fa-quote-right"></i>

@@ -1,0 +1,16 @@
+{% assign b4 = '/img/mastervanity-1before.jpg' %}
+{% assign af = '/img/mastervanity-2after.jpg' %}
+
+<div class="w-full max-w-xl md:w-6/12 align-middle m-auto">
+  <div class="relative flex flex-col w-full rounded-lg">
+    <div class="relative h-52 md:h-60 lg:h-80 overflow-auto">
+      <img
+        src="{{ af }}"
+        onmouseover="this.src='{{ b4 }}'"
+        onmouseout="this.src='{{ af }}'"
+        class="absolute top-0 left-0 w-full object-cover"
+        alt="bathroom vanity"
+      />
+    </div>
+  </div>
+</div>
